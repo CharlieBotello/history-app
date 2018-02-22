@@ -1,4 +1,14 @@
 class Location < ApplicationRecord
+  
+  has_many :images
+  has_many :user_locations
+  has_many :location_stories 
+  has_many :stories, through: :location_stories
+
+  # has_many :category_items 
+  # has_many :categories 
+
+
   validates :name, presence: true 
   
   def friendly_update
